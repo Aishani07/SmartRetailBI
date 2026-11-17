@@ -1,21 +1,27 @@
-
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import pandas as pd
-import os
+from pathlib import Path
 
-app = Flask(__name__)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+app = Flask(
+    __name__,
+    static_folder="frontend",
+    static_url_path=""
+)
+
 CORS(app)
 
 print("========== SMARTRETAIL INTELLIGENCE API ==========")
 
 # Load analytics datasets
-sales = pd.read_csv("reports/eda/tables/monthly_sales.csv")
-countries = pd.read_csv("reports/eda/tables/country_sales.csv")
-customers = pd.read_csv("reports/customer_analysis/customer_segments.csv")
-forecasts = pd.read_csv("reports/forecasting/sales_forecast.csv")
-anomalies = pd.read_csv("reports/anomaly_detection/sales_anomalies.csv")
-recommendations = pd.read_csv(
+sales = pd.read_csv(BASE_DIR / "reports/eda/tables/monthly_sales.csv")
+countries = pd.read_csv(BASE_DIR /"reports/eda/tables/country_sales.csv")
+customers = pd.read_csv(BASE_DIR /"reports/customer_analysis/customer_segments.csv")
+forecasts = pd.read_csv(BASE_DIR /"reports/forecasting/sales_forecast.csv")
+anomalies = pd.read_csv(BASE_DIR /"reports/anomaly_detection/sales_anomalies.csv")
+recommendations = pd.read_csv(BASE_DIR /
     "reports/product_recommendations/product_recommendations.csv"
 )
 
@@ -23,10 +29,7 @@ recommendations = pd.read_csv(
 # HOME API
 @app.route("/")
 def home():
-    return jsonify({
-        "project": "SmartRetail Intelligence",
-        "message": "API is running successfully"
-    })
+    return app.send_static_file("index.html")
 
 
 # SALES SUMMARY API
