@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRetail Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>SmartRetail</h2>
+            <p class="subtitle">INTELLIGENCE</p>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#sales">Sales Analytics</a>
+                <a href="#customers">Customer Segmentation</a>
+                <a href="#forecast">Sales Forecast</a>
+                <a href="#anomalies">Anomaly Detection</a>
+                <a href="#recommendations">Recommendations</a>
+                <a href="#chatbot">AI Chatbot</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header>
+                <div>
+                    <h1>Retail Business Dashboard</h1>
+                    <p>Predictive analytics and business intelligence</p>
+                </div>
+                <div class="status">● System Online</div>
+            </header>
+
+            <!-- KPI CARDS -->
+            <section class="kpi-container">
+
+                <div class="kpi-card">
+                    <p>Total Revenue</p>
+                    <h2 id="totalRevenue">Loading...</h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Total Customers</p>
+                    <h2 id="totalCustomers">Loading...</h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Total Transactions</p>
+                    <h2>19,962</h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Sales Anomalies</p>
+                    <h2 id="totalAnomalies">Loading...</h2>
+                </div>
+
+            </section>
+
+            <!-- CHARTS -->
+            
+<div class="chart-card">
+    <h3>Monthly Revenue Trend</h3>
+
+    <label for="monthFilter">Select Month:</label>
+    <select id="monthFilter">
+        <option value="all">All Months</option>
+    </select>
+
+    <canvas id="salesChart"></canvas>
+
+    <p id="monthlyRevenueInfo"></p>
+</div>
+
+
+                
+<div class="chart-card">
+    <h3>Revenue by Country</h3>
+
+    <label for="countryFilter">Select Country:</label>
+    <select id="countryFilter">
+        <option value="all">All Countries</option>
+    </select>
+
+    <canvas id="countryChart"></canvas>
+
+    <p id="countryRevenueInfo"></p>
+</div>
+
+
+                
+<div class="chart-card" id="customers">
+    <h3>Customer Segmentation</h3>
+
+    <p>Select a segment from the chart to explore its customers.</p>
+
+    <canvas id="segmentChart"></canvas>
+
+    <div id="segmentInfo">
+        Click a segment to see its details.
+    </div>
+</div>
+
+
+                
+<div class="chart-card" id="forecast">
+    <h3>30-Day Sales Forecast</h3>
+
+    <label for="forecastFilter">Select Forecast Date:</label>
+    <select id="forecastFilter">
+        <option value="all">All 30 Days</option>
+    </select>
+
+    <canvas id="forecastChart"></canvas>
+
+    <div id="forecastInfo">
+        Select a date or click a point to view forecast details.
+    </div>
+</div>
+
+
+            </section>
+
+           
+<div class="chart-card" id="anomalies">
+    <h3>Sales Anomaly Detection</h3>
+
+    <label for="anomalyFilter">Filter Anomalies:</label>
+    <select id="anomalyFilter">
+        <option value="all">All Anomalies</option>
+        <option value="high">Unusually High Sales</option>
+        <option value="low">Unusually Low Sales</option>
+    </select>
+
+    <canvas id="anomalyChart"></canvas>
+
+    <div id="anomalyInfo">
+        Click a bar to view anomaly details.
+    </div>
+
+    <div id="anomalyList"></div>
+</div>
+
+
+                
+<div class="chart-card" id="recommendations">
+    <h3>Product Recommendations</h3>
+
+    <p>Enter a product name to find frequently purchased
+    products together.</p>
+
+    <div class="recommendation-search">
+        <input
+            type="text"
+            id="productInput"
+            placeholder="Enter product name..."
+        >
+
+        <button id="recommendButton">Find Recommendations</button>
+    </div>
+
+    <div id="recommendationResults">
+        Search for a product to see recommendations.
+    </div>
+</div>
+
+
+            </section>
+
+            
+<section class="chatbot-card" id="chatbot">
+
+    <h3>SmartRetail AI Assistant</h3>
+
+    <p>Ask questions about sales, customers, forecasts and products.</p>
+
+    <div class="chat-window" id="chatWindow">
+
+        <div class="bot-message">
+            Hello! Welcome to SmartRetail Intelligence.
+            You can ask me about revenue, customers, sales forecasts,
+            anomalies and product recommendations.
+        </div>
+
+    </div>
+
+    <div class="chat-input-area">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask something about your retail data..."
+        >
+
+        <button id="sendButton">Send</button>
+
+    </div>
+
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

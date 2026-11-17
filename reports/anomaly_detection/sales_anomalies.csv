@@ -1,0 +1,11 @@
+Date,Revenue,Weekday,LowerLimit,UpperLimit,Anomaly,AnomalyType
+2010-12-07,99553.85000000002,Tuesday,0.0,85899.88,True,Unusually High Sales
+2011-01-18,95947.73000000003,Tuesday,0.0,85899.88,True,Unusually High Sales
+2011-09-20,109553.90000000001,Tuesday,0.0,85899.88,True,Unusually High Sales
+2011-10-05,75460.76999999999,Wednesday,0.0,73365.3325,True,Unusually High Sales
+2011-11-07,85705.3,Monday,0.0,77870.43500000001,True,Unusually High Sales
+2011-11-14,114237.40000000001,Monday,0.0,77870.43500000001,True,Unusually High Sales
+2011-11-23,79847.0,Wednesday,0.0,73365.3325,True,Unusually High Sales
+2011-12-05,88620.84,Monday,0.0,77870.43500000001,True,Unusually High Sales
+2011-12-07,75315.55,Wednesday,0.0,73365.3325,True,Unusually High Sales
+2011-12-09,200900.98000000004,Friday,0.0,79184.0,True,Unusually High Sales
